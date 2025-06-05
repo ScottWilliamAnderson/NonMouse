@@ -58,8 +58,9 @@ OR
 Run the following script.
 
 ```sh
-$ pip install nonmouse
+$ uv pip install nonmouse
 ```
+If you don't have `uv`, follow the [installation guide](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer).
 (If you have trouble installing mediapipe, please visit the [official website](https://google.github.io/mediapipe/getting_started/install.html).)
 
 # Usage
@@ -163,10 +164,10 @@ Run the following scripts for each OS.
 
 - windows
 
-   Copy and paste the location obtained by `pip show mediapipe` into `datas`, referring to what is written originally.  
+   Copy and paste the location obtained by `uv pip show mediapipe` into `datas`, referring to what is written originally.
    Run the following script.
    ```sh
-   $ pip show mediapipe
+   $ uv pip show mediapipe
    ...
    Location: c:\users\namik\appdata\local\programs\python\python37\lib\site_packages
    ...
@@ -175,12 +176,12 @@ Run the following scripts for each OS.
    ... ````
 - mac
 
-   Create a venv environment and perform `pip install`, because the directory specified in `datas` is for an assumed venv environment. 
+   Create a venv environment and perform `uv pip install`, because the directory specified in `datas` is for an assumed venv environment.
    ```sh 
    $ git clone https://github.com/takeyamayuki/NonMouse.git
    $ cd NonMouse
-   $ python3 -m venv venv
+   $ uv venv venv
    $ . venv/bin/activate
-   (venv)$ pip install -r requirements.txt
+   (venv)$ uv pip install -r requirements.txt
    (venv)$ pyinstaller config/mac.spec
    ```

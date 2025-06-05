@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nonmouse"
+version = "2.7.0"
+description = "a webcam-based virtual gesture mouse that is easy to use with hands on the desk"
+authors = [{name="Yuki TAKEYAMA", email="namiki.takeyama@gmail.com"}]
+license = {text = "Apache-2.0"}
+readme = "README.md"
+requires-python = ">=3.9"
+
+[project.urls]
+Homepage = "https://github.com/takeyamayuki/NonMouse"
+
+[project.scripts]
+nonmouse = "nonmouse.__main__:main"
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "UP", "I"]
+ignore = ["E501"]
+per-file-ignores = {"tests/*.py" = ["S101"]}
+fixable = ["ALL"]
+
+[tool.mypy]
+python_version = "3.9"
+ignore_missing_imports = true
+ignore_errors = true
+
+[tool.pytest.ini_options]
+addopts = "-ra --cov=nonmouse --cov-report=term-missing"
