@@ -31,11 +31,11 @@ def draw_circle(
 
 
 def calculate_distance(
-    lankdmark1: Sequence[float],
+    landmark1: Sequence[float],
     landmark2: Sequence[float],
 ) -> float:
     """Return the Euclidean distance between two 2D landmarks."""
-    v = np.array([lankdmark1[0], lankdmark1[1]]) - np.array(
+    v = np.array([landmark1[0], landmark1[1]]) - np.array(
         [landmark2[0], landmark2[1]],
     )
     return np.linalg.norm(v)
