@@ -25,7 +25,5 @@ jobs:
         run: uv run pre-commit run --show-diff-on-failure --color=always --all-files
       - name: Run tests
         run: uv run coverage run -m pytest -q
-      - name: Coverage report
-        run: uv run coverage report -m
       - name: Run bandit
         run: uv run bandit -r nonmouse -s B101 -x tests
